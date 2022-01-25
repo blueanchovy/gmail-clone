@@ -1,0 +1,18 @@
+.header__left {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__leftMenu {
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  vertical-align: middle;
+  padding: 10px !important;
+}
+
+.header__left > img {
+  object-fit: contain;
+  height: 40px;
+  padding: 10px;
+}
