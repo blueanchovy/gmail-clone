@@ -21,7 +21,10 @@ function Header() {
           </div>
         </div>
 
-        <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png" />
+        <img
+          src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png"
+          alt=""
+        />
       </div>
 
       <div className="header__middle">
