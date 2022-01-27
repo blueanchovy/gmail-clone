@@ -24,10 +24,13 @@
 
 .sidebarOption > p {
   display: none;
+  font-weight: 450;
 }
 
 .sidebarOption:hover > p {
   display: inline;
+  font-weight: 450;
+  font-size: small;
 }
 
 .sidebarOption:hover,
@@ -53,4 +56,6 @@
 
 .sidebarOption--active > p {
   display: inline !important;
+  font-weight: 450;
+  font-size: small;
 }
