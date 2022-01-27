@@ -53,7 +53,18 @@ function EmailList() {
       </div>
 
       <div className="emailLIst__list">
-        <EmailRow />
+        <EmailRow
+          title="Netflix"
+          subject="Job Offer"
+          description="Hey Manish! We're delighted to welcome you to Netflix. You will be joining our platform team in the role of Frontend Developer."
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="Job Offer"
+          description="Hey Manish! We're delighted to welcome you..."
+          time="10:15 AM"
+        />
       </div>
     </div>
   );
