@@ -16,13 +16,23 @@
   padding-right: 20px;
 }
 
+.mail__toolsSections {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
 .mail__toolsSection {
+  display: flex;
+  flex-direction: row;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .mail__settingsRight {
-  position: fixed;
+  display: flex;
+  flex-direction: row;
+  position: relative;
   right: 0;
   height: 40px;
   background-color: white;

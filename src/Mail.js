@@ -28,43 +28,45 @@ function Mail() {
     <div className="mail">
       <div className="mail__tools">
         <div className="mail__toolsBack">
-          <IconButton onClick={() => navigate(`/EmailList`)}>
+          <IconButton onClick={() => navigate(-1)}>
+            {/* go back one page */}
             <ArrowBackIcon />
           </IconButton>
         </div>
-        <div className="mail__toolsSections"></div>
-        <div className="mail__toolsSection">
-          <IconButton>
-            <MoveToInboxIcon />
-          </IconButton>
-          <IconButton>
-            <ErrorIcon />
-          </IconButton>
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </div>
-        <div className="mail__toolsSection">
-          <IconButton>
-            <MarkAsUnreadIcon />
-          </IconButton>
-          <IconButton>
-            <WatchLaterIcon />
-          </IconButton>
-          <IconButton>
-            <AddTaskIcon />
-          </IconButton>
-        </div>
-        <div className="mail__toolsSection">
-          <IconButton>
-            <DriveFileMoveIcon />
-          </IconButton>
-          <IconButton>
-            <LabelIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
+        <div className="mail__toolsSections">
+          <div className="mail__toolsSection">
+            <IconButton>
+              <MoveToInboxIcon />
+            </IconButton>
+            <IconButton>
+              <ErrorIcon />
+            </IconButton>
+            <IconButton>
+              <DeleteIcon />
+            </IconButton>
+          </div>
+          <div className="mail__toolsSection">
+            <IconButton>
+              <MarkAsUnreadIcon />
+            </IconButton>
+            <IconButton>
+              <WatchLaterIcon />
+            </IconButton>
+            <IconButton>
+              <AddTaskIcon />
+            </IconButton>
+          </div>
+          <div className="mail__toolsSection">
+            <IconButton>
+              <DriveFileMoveIcon />
+            </IconButton>
+            <IconButton>
+              <LabelIcon />
+            </IconButton>
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          </div>
         </div>
 
         <div className="mail__settingsRight">
