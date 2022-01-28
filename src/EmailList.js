@@ -55,14 +55,14 @@ function EmailList() {
       <div className="emailLIst__list">
         <EmailRow
           title="Netflix"
-          subject="Job Offer"
-          description="Hey Manish! We're delighted to welcome you to Netflix. You will be joining our platform team in the role of Frontend Developer."
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
           time="10:15 PM"
         />
         <EmailRow
-          title="Netflix"
-          subject="Job Offer"
-          description="Hey Manish! We're delighted to welcome you..."
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
           time="10:15 AM"
         />
       </div>

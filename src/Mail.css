@@ -1,0 +1,86 @@
+.mail {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid whitesmoke;
+  flex: 1;
+}
+
+.mail__tools {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 40px;
+}
+
+.mail__toolsBack {
+  padding-right: 20px;
+}
+
+.mail__toolsSection {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mail__settingsRight {
+  position: fixed;
+  right: 0;
+  height: 40px;
+  background-color: white;
+}
+
+.mail__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mail__bodyHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.mail__bodyHeader > h2 {
+  font-weight: 300;
+  font-style: bold;
+  font-size: 25px;
+}
+
+.mail__sender {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.mail__senderLeftMenu {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.mail__senderLeftMenu > h4 {
+  padding-left: 10px;
+}
+
+.mail__senderRightMenu {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.mail__senderRightMenu > p {
+  font-size: 14px;
+  font-weight: 250;
+}
+
+.mail__message {
+  padding-left: 50px;
+}

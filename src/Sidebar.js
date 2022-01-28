@@ -20,7 +20,7 @@ function Sidebar() {
     <div className="sidebar">
       <Button
         variant="text"
-        startIcon={<AddIcon fontsize="large" />}
+        startIcon={<AddIcon fontSize="large" />}
         style={{ color: "black" }}
         className="sidebar__compose"
       >
