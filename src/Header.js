@@ -69,7 +69,7 @@ function Header() {
           <AppsRoundedIcon />
         </IconButton>
         <IconButton onClick={signout}>
-          <Avatar src={user?.photoURL} />
+          <Avatar src={user?.photoUrl} />
         </IconButton>
       </div>
     </div>
