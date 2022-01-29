@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./EmailList.css";
 import Section from "./Section.js";
 import EmailRow from "./EmailRow.js";
@@ -13,8 +13,26 @@ import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import InboxIcon from "@mui/icons-material/Inbox";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import { db } from "./firebase";
+import { query, orderBy, collection, onSnapshot } from "firebase/firestore";
 
 function EmailList() {
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    const emailsRef = collection(db, "emails");
+    const q = query(emailsRef, orderBy("timestamp", "desc"));
+
+    onSnapshot(q, (snapshot) =>
+      setEmails(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="emailList">
       <div className="emailList__settings">
@@ -53,6 +71,113 @@ function EmailList() {
       </div>
 
       <div className="emailLIst__list">
+        {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
+
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
+        <EmailRow
+          title="Netflix"
+          subject="New Plan!"
+          description="Hey Manish! We're delighted to welcome you to Netflix. "
+          time="10:15 PM"
+        />
+        <EmailRow
+          title="Spotify"
+          subject="Your plan is ending tomorrow."
+          description="Hey Manish! Please update your spotify premiuim."
+          time="10:15 AM"
+        />
         <EmailRow
           title="Netflix"
           subject="New Plan!"

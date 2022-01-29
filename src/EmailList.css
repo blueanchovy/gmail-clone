@@ -23,3 +23,18 @@
   background-color: white;
   z-index: 999;
 }
+
+.emailList__list {
+  padding-bottom: 20%;
+}
+
+/* Hide emaillist scrollbar chrome safari opera */
+.emailList::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar IE Edge Firefox */
+.emailList {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
