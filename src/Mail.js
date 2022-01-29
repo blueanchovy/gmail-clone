@@ -20,9 +20,12 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
 import ReplyIcon from "@mui/icons-material/Reply";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectOpenMail } from "./features/mailSlice";
 
 function Mail() {
   let navigate = useNavigate();
+  const selectedMail = useSelector(selectOpenMail);
 
   return (
     <div className="mail">
@@ -84,7 +87,7 @@ function Mail() {
 
       <div className="mail__body">
         <div className="mail__bodyHeader">
-          <h2>Subject is very important!!!</h2>
+          <h2>{selectedMail?.subject}</h2>
           <div className="mail__bodyHeaderOptions">
             <IconButton>
               <PrintIcon />
@@ -98,11 +101,11 @@ function Mail() {
         <div className="mail__sender">
           <div className="mail__senderLeftMenu">
             <Avatar />
-            <h4>id@email.com</h4>
+            <h4>{selectedMail?.title}</h4>
           </div>
 
           <div className="mail__senderRightMenu">
-            <p>10 PM</p>
+            <p>{selectedMail?.time}</p>
             <IconButton>
               <StarIcon />
             </IconButton>
@@ -114,7 +117,7 @@ function Mail() {
             </IconButton>
           </div>
         </div>
-        <div className="mail__message">This is a message!</div>
+        <div className="mail__message">{selectedMail?.description}</div>
       </div>
     </div>
   );
