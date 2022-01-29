@@ -8,8 +8,27 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Avatar from "@mui/material/Avatar";
+import { useSelector } from "react-redux";
+import { selectUser, logout } from "./features/userSlice";
+import { useDispatch } from "react-redux";
+import { signOut } from "firebase/auth";
+import { auth } from "./firebase";
 
 function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signout = () => {
+    signOut(auth)
+      .then(() => {
+        dispatch(logout());
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -49,8 +68,8 @@ function Header() {
         <IconButton>
           <AppsRoundedIcon />
         </IconButton>
-        <IconButton>
-          <Avatar />
+        <IconButton onClick={signout}>
+          <Avatar src={user?.photoUrl} />
         </IconButton>
       </div>
     </div>
