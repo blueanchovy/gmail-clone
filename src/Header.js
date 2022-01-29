@@ -68,8 +68,10 @@ function Header() {
         <IconButton>
           <AppsRoundedIcon />
         </IconButton>
-        <IconButton onClick={signout}>
+        <div></div>
+        <IconButton className="header__avatar" onClick={signout}>
           <Avatar src={user?.photoUrl} />
+          <p>Logout</p>
         </IconButton>
       </div>
     </div>

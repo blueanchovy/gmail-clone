@@ -61,3 +61,12 @@
   flex-direction: row;
   padding-right: 20px;
 }
+
+.header__avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__avatar > p {
+  font-size: 10px;
+}
