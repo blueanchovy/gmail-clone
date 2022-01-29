@@ -1,15 +1,32 @@
 import React from "react";
 import "./EmailRow.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import IconButton from "@mui/material/IconButton";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { selectMail } from "./features/mailSlice";
 
 function EmailRow({ id, title, subject, description, time }) {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const openMail = () => {
+    dispatch(
+      selectMail({
+        id,
+        title,
+        subject,
+        description,
+        time,
+      })
+    );
+
+    navigate(`/Mail`);
+  };
 
   return (
-    <div onClick={() => navigate(`/Mail`)} className="emailRow">
+    <div onClick={openMail} className="emailRow">
       <div className="emailRow__options">
         <IconButton>
           <CheckBoxOutlineBlankIcon />
@@ -27,7 +44,7 @@ function EmailRow({ id, title, subject, description, time }) {
         <h4>
           {subject}
           {"  "}
-          <span className="emailRow__description">{description}</span>
+          <span className="emailRow__description">- {description}</span>
         </h4>
       </div>
 

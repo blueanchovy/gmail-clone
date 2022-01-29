@@ -21,12 +21,12 @@
 }
 
 .emailRow__title {
-  flex: 0.1;
+  flex: 0.2;
   font-size: 12px;
 }
 
 .emailRow__message {
-  flex: 0.45;
+  flex: 0.55;
 }
 
 .emailRow__message > h4 {
@@ -47,5 +47,6 @@
 .emailRow__time {
   font-size: 12px;
   font-weight: bold;
-  flex: 0.35;
+  flex: 0.2;
+  white-space: nowrap;
 }
