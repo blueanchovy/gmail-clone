@@ -14,8 +14,12 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
 import Avatar from "@mui/material/Avatar";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useDispatch } from "react-redux";
+import { openSendMessage } from "./features/mailSlice";
 
 function Sidebar() {
+  const dispatch = useDispatch();
+
   return (
     <div className="sidebar">
       <Button
@@ -23,6 +27,7 @@ function Sidebar() {
         startIcon={<AddIcon fontSize="large" />}
         style={{ color: "black" }}
         className="sidebar__compose"
+        onClick={() => dispatch(openSendMessage())}
       >
         Compose
       </Button>
